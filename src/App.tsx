@@ -117,8 +117,8 @@ export default function App() {
           <p className="text-amber-900 text-sm leading-relaxed">{MESSAGES.intro.split('\n\n').map((p, i) => <span key={i}>{p}{i < 2 && <><br /><br /></>}</span>)}</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button onClick={() => setGs(p => ({ ...p, screen: 'niveau' }))} className="px-8 py-4 bg-gradient-to-r from-amber-600 to-amber-800 text-white rounded-lg font-bold text-lg shadow-lg">▶ Commencer l'Aventure</button>
-          <button onClick={() => setDashOpen(true)} className="px-6 py-4 bg-gradient-to-r from-slate-700 to-slate-800 text-slate-200 rounded-lg font-bold shadow-lg">🛡️ Espace Enseignant</button>
+          <button onClick={() => setGs(p => ({ ...p, screen: 'niveau' }))} className="px-8 py-4 bg-gradient-to-r from-amber-600 to-amber-800 text-white rounded-lg font-bold text-lg shadow-lg hover:scale-105 transition-transform">▶ Commencer l'Aventure</button>
+          <button onClick={() => setDashOpen(true)} className="px-6 py-4 bg-gradient-to-r from-slate-700 to-slate-800 text-slate-200 rounded-lg font-bold shadow-lg hover:scale-105 transition-transform">🛡️ Espace Enseignant</button>
         </div>
       </div>
       {dashOpen && (
@@ -183,7 +183,7 @@ export default function App() {
         </div>
         <p className="text-amber-200/60 mt-6 mb-2">Rang : {niv.icon} {niv.nom}</p>
         <p className="text-amber-200/60 mb-6">Temps : {fmt(gs.temps)}</p>
-        <button onClick={() => setGs(p => ({ ...p, screen: 'jeu' }))} className="px-8 py-3 bg-gradient-to-r from-amber-600 to-amber-800 text-white rounded-lg font-bold text-lg shadow-lg">Partir en Mission →</button>
+        <button onClick={() => setGs(p => ({ ...p, screen: 'jeu' }))} className="px-8 py-3 bg-gradient-to-r from-amber-600 to-amber-800 text-white rounded-lg font-bold text-lg shadow-lg hover:scale-105 transition-transform">Partir en Mission →</button>
       </div>
     </div>
   );
@@ -198,7 +198,7 @@ export default function App() {
         <h3 className="text-2xl text-amber-300 mb-4">{chap.titre}</h3>
         <p className="text-white/80 mb-2 italic">{chap.lieu}</p>
         <p className="text-white/70 mb-6">{chap.description}</p>
-        <button onClick={() => setGs(p => ({ ...p, screen: 'jeu' }))} className="px-8 py-3 bg-gradient-to-r from-amber-600 to-amber-800 text-white rounded-lg font-bold shadow-lg">Continuer →</button>
+        <button onClick={() => setGs(p => ({ ...p, screen: 'jeu' }))} className="px-8 py-3 bg-gradient-to-r from-amber-600 to-amber-800 text-white rounded-lg font-bold shadow-lg hover:scale-105 transition-transform">Continuer →</button>
       </div>
     </div>
   );
@@ -210,8 +210,8 @@ export default function App() {
         <div className="text-5xl mb-4">⏸️</div>
         <h2 className="text-2xl font-bold text-white mb-2">Mission en Pause</h2>
         <p className="text-slate-400 mb-6">Le temps est suspendu.</p>
-        <button onClick={() => setGs(p => ({ ...p, pause: false, screen: 'jeu' }))} className="w-full px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-lg font-bold mb-3">▶ Reprendre</button>
-        <button onClick={() => setGs(init)} className="w-full px-6 py-3 bg-slate-700 text-slate-200 rounded-lg font-bold">🏠 Quitter</button>
+        <button onClick={() => setGs(p => ({ ...p, pause: false, screen: 'jeu' }))} className="w-full px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-lg font-bold mb-3 hover:scale-105 transition-transform">▶ Reprendre</button>
+        <button onClick={() => setGs(init)} className="w-full px-6 py-3 bg-slate-700 text-slate-200 rounded-lg font-bold hover:scale-105 transition-transform">🏠 Quitter</button>
       </div>
     </div>
   );
@@ -231,7 +231,7 @@ export default function App() {
           <div className="glass-effect rounded-lg p-3"><div className="text-2xl">⏱️</div><div className="text-xl font-bold text-white">{fmt(gs.tempsJoue)}</div><div className="text-xs text-slate-400">Temps</div></div>
           <div className="glass-effect rounded-lg p-3"><div className="text-2xl">📖</div><div className="text-xl font-bold text-white">{gs.lecons.length}</div><div className="text-xs text-slate-400">Leçons</div></div>
         </div>
-        <button onClick={() => setGs(init)} className="px-8 py-3 bg-gradient-to-r from-amber-600 to-amber-800 text-white rounded-lg font-bold text-lg shadow-lg">🔄 Nouvelle Mission</button>
+        <button onClick={() => setGs(init)} className="px-8 py-3 bg-gradient-to-r from-amber-600 to-amber-800 text-white rounded-lg font-bold text-lg shadow-lg hover:scale-105 transition-transform">🔄 Nouvelle Mission</button>
       </div>
     </div>
   );
@@ -246,8 +246,8 @@ export default function App() {
           <p className="text-amber-900 text-base leading-relaxed">{MESSAGES.defaite}</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button onClick={() => start(gs.niveauId)} className="px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-800 text-white rounded-lg font-bold">🔄 Réessayer</button>
-          <button onClick={() => setGs(init)} className="px-6 py-3 bg-slate-700 text-slate-200 rounded-lg font-bold">🏠 Accueil</button>
+          <button onClick={() => start(gs.niveauId)} className="px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-800 text-white rounded-lg font-bold hover:scale-105 transition-transform">🔄 Réessayer</button>
+          <button onClick={() => setGs(init)} className="px-6 py-3 bg-slate-700 text-slate-200 rounded-lg font-bold hover:scale-105 transition-transform">🏠 Accueil</button>
         </div>
       </div>
     </div>
@@ -259,7 +259,7 @@ export default function App() {
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-3xl font-bold text-white flex items-center gap-3">📊 Dashboard Enseignant</h1>
-          <button onClick={() => setGs(init)} className="px-4 py-2 bg-slate-700 text-white rounded-lg">🏠 Retour</button>
+          <button onClick={() => setGs(init)} className="px-4 py-2 bg-slate-700 text-white rounded-lg hover:scale-105 transition-transform">🏠 Retour</button>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {[{ l: 'Parties', v: '12', i: '🎮' }, { l: 'Score moyen', v: '1450', i: '🏆' }, { l: 'Réussite', v: '72%', i: '🎯' }, { l: 'Temps moyen', v: '28 min', i: '⏱️' }].map((s, i) => (
@@ -417,8 +417,8 @@ export default function App() {
           )}
 
           <div className="flex flex-wrap gap-3">
-            {!fb && <button onClick={submit} disabled={!rep && enig.type !== 'association'} className="px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-800 text-white rounded-lg font-bold disabled:opacity-50">🎯 Valider</button>}
-            {expShow && <button onClick={next} className="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-lg font-bold">Suivant →</button>}
+            {!fb && <button onClick={submit} disabled={!rep && enig.type !== 'association'} className="px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-800 text-white rounded-lg font-bold disabled:opacity-50 hover:scale-105 transition-transform">🎯 Valider</button>}
+            {expShow && <button onClick={next} className="px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-lg font-bold hover:scale-105 transition-transform">Suivant →</button>}
           </div>
 
           <div className="mt-6 pt-4 border-t border-slate-700/50">
